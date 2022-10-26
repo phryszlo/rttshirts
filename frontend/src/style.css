@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Blaka+Ink&family=Bungee+Shade&family=Butcherman&family=Crimson+Text&family=Faster+One&family=Gemunu+Libre&family=Mochiy+Pop+One&family=Molle&family=Montserrat:wght@300;400&family=Noto+Sans+Mono:wght@300&family=Overpass&family=Rajdhani&display=swap');
+
+
+/* CSS Custom Properties */
+:root {
+  --white: #FFFFFF;
+  --tan-1: #FBF9F6;
+  --tan-2: #E7E2DD;
+  --tan-3: #E2D9D1;
+  --tan-4: #D3C1AE;
+  --orange: #F67F00;
+  --text-light: #968c84;
+  --text-dark: #615954;
+  --console: lime;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  /* border: solid aqua; */
+}
+
+/* 'Gemunu Libre'
+'Mochiy Pop One'
+'Molle'
+'Montserrat'
+'Noto Sans Mono'
+'Overpass' */
+
+body {
+  margin: 0;
+  font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--white);
+  /* padding: 2vmin; */
+  height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#root {
+  height: 100%;
+}
+
+.App {
+  padding: 0;
+  margin: 0;
+}
+
+.nav-bar {
+  /* display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 2fr 1fr; */
+  z-index: 66;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom: .3px solid var(--text-dark);
+  width: 100vw;
+  height: 4em;
+  letter-spacing: .15pc;
+  padding: 0;
+  margin: 0;
+}
+.nav-container {
+  margin: 0;
+}
+
+h1.nav-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-login {
+  position: absolute;
+  right: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4em;
+  padding-top: .6em;
+  /* border: solid fuchsia; */
+}
+.g-name {
+  font-size: 12px;
+}
+.g-profile-img {
+  border-radius: 50%;
+  height: 2.55em;
+}
+.g-signout {
+  height: 1.6em;
+  width: 3em;
+  line-height: 10px;
+  font-size: 12px;
+  border-radius: 15%;
+}
+
+.carousel {
+  width: 60vw;
+  margin: 2em auto;
+}
+.carousel img {
+  height: 80vh;
+  width: 45vh;
+  border-radius: 50%;
+}
+.carousel h3, .carousel p {
+  font-family: 'Blaka Ink', cursive;
+  font-size: 30px;
+  color: black;
+  /* text-shadow: .2px .4px var(--orange); */
+  filter: hue-rotate(340deg) saturate(500%);
+}
+.carousel p {
+  font-size: 14px;
+}
+
+.spacer {
+  width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  /* border: solid orangered; */
+}
+
+.nav-links a {
+  text-decoration: none;
+  text-shadow: .4px .4px var(--white);
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  font-size: 12px;
+  width: 100%;
+  padding-right: 1em;
+  font-family: 'Rajdhani';
+  filter: hue-rotate(122deg) saturate(500%);
+  /* border: solid fuchsia; */
+}
+
+.align-ctr {
+  text-align: center;
+}
+
+.align-rt {
+  text-align: right;
+}
+
+.smaller {
+  font-size: smaller;
+}
+
+.flex-ctr-ctr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-j-end {
+  justify-content: flex-end;
+}
+
+.scroll-y {
+  overflow-y: scroll;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--tan-1);
+  color: var(--text-dark);
+  border: .1vmin solid var(--tan-3);
+  border-radius: 1vmin;
+  padding: .6vmin;
+  text-align: center;
+  font-size: 2vmin;
+}
+
+#signInDiv {
+  width: fit-content;
+  margin: 0.2em auto;
+}
+
+.auth-container {
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 60vw;
+  height: 100%;
+  margin: 1em auto;
+  border-radius: 3vmin;
+  background-color: var(--white);
+  /* border: .3px solid orange; */
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 16vmin;
+  height: 16vmin;
+  font-size: 16px;
+  font-family: 'Noto Sans Mono', monospace;
+  background-color: var(--orange);
+  border: 3px solid var(--tan-4);
+  border-radius: 50%;
+}
+
+.login-toggle {
+  cursor: pointer;
+}
+
+.form-container {
+  padding: 3vmin;
+  background-color: var(--tan-1);
+  border: .1vmin solid var(--tan-3);
+  border-radius: 1vmin;
+  /* width: fit-content; */
+  min-width: 40vw;
+
+  font-family: 'Rajdhani';
+  /* margin: 0 auto; */
+}
+
+p.error-message {
+  color: var(--orange);
+  text-align: center;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1.25vmin;
+  color: var(--text-light);
+}
+
+label {
+  font-size: 2vmin;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  min-width: 50%;
+  /* border: solid blue; */
+}
+
+input {
+  padding: 1vmin;
+  font-size: 2vmin;
+  border: .1vmin solid var(--tan-3);
+  border-radius: .5vmin;
+  color: var(--text-dark);
+  background-image: none !important;
+  /* prevent lastpass */
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--orange);
+}
+
+input::placeholder {
+  opacity: .5;
+}
+
+button,
+a.button {
+  margin: 1vmin;
+  padding: 1vmin;
+  color: var(--white);
+  background-color: var(--orange);
+  font-size: 2vmin;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border: .1vmin solid var(--tan-2);
+  border-radius: .5vmin;
+  outline: none;
+  cursor: pointer;
+}
+
+button.btn-sm {
+  font-size: 1.5vmin;
+  padding: .6vmin .8vmin;
+}
+
+button.btn-xs {
+  font-size: 1vmin;
+  padding: .4vmin .5vmin;
+}
+
+button:disabled,
+form:invalid button[type="submit"] {
+  cursor: not-allowed;
+  background-color: var(--tan-4);
+}
+
+button[type="submit"] {
+  grid-column: span 2;
+  margin: 1vmin 0 0;
+}
+
+/* there endeth the copied style */
+
+.or {
+  padding: 0 0 1em 0;
+}
+
+.log-box {
+  width: 25vmin;
+  height: 18vmin;
+  background-color: #222;
+  color: var(--console);
+  font-family: 'Noto Sans Mono';
+  font-size: 9px;
+  text-align: left;
+  overflow-wrap: break-word;
+  padding: .5em;
+  margin: auto;
+}
