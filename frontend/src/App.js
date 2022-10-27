@@ -4,8 +4,11 @@ import { useState, useEffect } from 'react';
 import { Routes, Route, } from "react-router-dom";
 import { getUser } from './utilities/users-service'
 import NavBar from './components/NavBar';
+import Navbar from './components/NB';
 import AuthPage from "./pages/AuthPage";
 import HomePage from './pages/HomePage';
+import HomePage0 from './components/HomePage0';
+import HomePageK from './components/HPK';
 import CartPage from './pages/CartPage';
 import ProductsPage from './pages/ProductsPage';
 import tShirts from './data/data';
@@ -42,14 +45,23 @@ function App() {
     }
   }
 
-  const Remove = (product) => {
-    const check = cartItems.find((x) => x.id === product.id);
-    if (check.qty === 1) {
-      setCartItems(cartItems.filter((x) => x.id !== product.id));
+  const Remove = (id) => {
+    console.log(`remove from cart ${id}`);
+
+    // check if the cart already contains this item
+    const productInCart = cartItems.find((x) => x.id === parseInt(id));
+
+    // if somehow we got here and this product is not in the cart, cancel.
+    if (!productInCart) return;
+
+    // if cart has more than one of this item, decrement the qty on that item,
+    // otherwise, remove the one item.
+    if (productInCart.qty === 1) {
+      setCartItems(cartItems.filter((x) => x.id !== id))
     } else {
       setCartItems(
         cartItems.map((x) =>
-          x.id === product.id ? { ...check, qty: check.qty - 1 } : x
+          x.id === productInCart.id ? { ...productInCart, qty: productInCart.qty - 1 } : x
         )
       );
     }
@@ -71,6 +83,7 @@ function App() {
 
   return (
     <div className="App">
+
       <NavBar
         handleSignOut={handleSignOut}
         googleUser={googleUser}
@@ -80,7 +93,9 @@ function App() {
       {user || (Object.keys(googleUser).length !== 0) ?
         <div className="content-shell">
           <Routes>
+            {/* <Route path="/" element={<HomePage addToCart={addToCart} />} /> */}
             <Route path="/" element={<HomePage addToCart={addToCart} />} />
+            <Route path="/h0" element={<HomePage0 addToCart={addToCart} />} />
             <Route path="/products" element={<ProductsPage />} />
             <Route path="/cart" element={<CartPage cartItems={cartItems} products={products} />} />
           </Routes>

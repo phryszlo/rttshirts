@@ -23,6 +23,12 @@ function HomePage({addToCart}) {
             alt="First slide"
           />
           <button type="button" className="add-to-cart-btn" id="1" onClick={(e) => addToCart(e.target.id)}>add to cart</button>
+          <Carousel.Caption className="carousel-caption">
+            <h3>First slide label</h3>
+            <p>
+              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            </p>
+          </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className="carousel-item">
           <img
@@ -31,7 +37,7 @@ function HomePage({addToCart}) {
             alt="Second slide"
           />
           <button type="button" className="add-to-cart-btn" id="2" onClick={(e) => addToCart(e.target.id)}>add to cart</button>
-          <Carousel.Caption>
+          <Carousel.Caption className="carousel-caption">
             <h3>Second slide label</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </Carousel.Caption>
@@ -43,7 +49,7 @@ function HomePage({addToCart}) {
             alt="Third slide"
           />
           <button className="add-to-cart-btn" type="button" id="3" onClick={(e) => addToCart(e.target.id)}>add to cart</button>
-          <Carousel.Caption>
+          <Carousel.Caption className="carousel-caption">
             <h3>Third slide label</h3>
             <p>
               Praesent commodo cursus magna, vel scelerisque nisl consectetur.

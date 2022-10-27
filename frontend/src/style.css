@@ -122,28 +122,35 @@ h1.nav-title {
 .carousel {
   /* z-index: -1; */
   height: 100%;
-  width: 60vw;
+  width: 80vw;
   margin: 2em auto;
   /* border: solid greenyellow; */
 }
-.carousel-item {
-  /* z-index: -1; */
-}
+/* .carousel-item {
+} */
+
 .carousel img {
   height: 300px;
   border-radius: 50%;
 }
+.carousel-caption {
+  position: relative;
+  top: -7em;
+  left: .2em;
+}
 .carousel h3, .carousel p {
   font-family: 'Blaka Ink', cursive;
   font-size: 35px;
-  color: green;
+  /* color: green; */
   text-shadow: .4px .4px var(--orange);
   letter-spacing: .3pc;
-  filter: hue-rotate(140deg) saturate(500%);
+  filter: hue-rotate(160deg) saturate(500%);
 }
 .carousel p {
   font-size: 16px;
 }
+
+
 .add-to-cart-btn {
   z-index: 100;
   position: absolute;
@@ -312,6 +319,15 @@ button[type="submit"] {
   border: solid deeppink;
 }
 
+/* style={{ width: '18rem', margin: '0 auto' }} */
+.bs-card {
+  width: 50%;
+  margin: auto;
+}
+.bs-card img {
+  width: 150px;
+  margin: auto;
+}
 
 /* #endregion */
 
