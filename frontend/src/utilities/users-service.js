@@ -15,10 +15,12 @@ export const getToken = () => {
   const token =
     JSON.parse(localStorage.getItem("data"))
     && JSON.parse(localStorage.getItem("data"))?.token;
-  if (!token) return null;
+  if (!token) {
+    return null;
+  }
 
-  // const payload = JSON.parse(atob(token.split(".")[1]));
-  const payload = JSON.parse(atob(token.split(".")[1], 'base64'));
+  const payload = JSON.parse(atob(token.split(".")[1]));
+  // const payload = JSON.parse(Buffer(token.split(".")[1], 'base64'));
 
   if (payload.exp < Number.parseInt(Date.now() / 1000)) {
     localStorage.removeItem("data");
@@ -48,7 +50,9 @@ export function logOut() {
 
 export const getUser = () => {
   const token = getToken();
-  return token ? JSON.parse(localStorage.getItem("data.data.user")) : null;
+  // alert(JSON.stringify(JSON.parse(localStorage.getItem("data")).user.name))
+  // return token ? JSON.parse(localStorage.getItem("data.data.user")) : null;
+  return token ? JSON.parse(localStorage.getItem("data")).user : null;
 };
 
 export const getUsers = async () => {

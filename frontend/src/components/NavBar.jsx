@@ -17,8 +17,9 @@ function NavBar({ user, googleUser, handleSignOut, setUser }) {
   // this could have been stored in localStorage instead.
   useEffect(() => {
     if (user) {
+      // alert(JSON.stringify(user))
       // console.logs in useEffect[] only appear for a split second
-      setUserObj(user.data.user);
+      setUserObj(user);
     }
 
   }, []);
@@ -42,6 +43,7 @@ function NavBar({ user, googleUser, handleSignOut, setUser }) {
               <>
                 <Nav.Link as={Link} to="/">Home</Nav.Link>
                 <Nav.Link as={Link} to="products">Products</Nav.Link>
+                <Nav.Link as={Link} to="cart">Cart</Nav.Link>
               </>
             }
           </Nav>
@@ -63,7 +65,7 @@ function NavBar({ user, googleUser, handleSignOut, setUser }) {
               <div className="user-logout-unit">
                 <div
                   style={{ width: "100px", wordWrap: 'break-word' }}>
-                  hi, {userObj.name}
+                  hi, {user && JSON.parse(localStorage.getItem("data")).user.name}
                 </div>
                 <button
                   className="u-signout"

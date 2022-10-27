@@ -22,7 +22,7 @@ export default function LoginForm({ setUser }) {
     try {
       const user = await logIn(formData);
       if (user === 401) return setError('Unauthorized')
-      setUser(user)
+      setUser(user.data)
     } catch {
       setError('Login Failed - Try Again');
     }

@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs');
 
 async function create(req, res) {
-
   try {
     const { password, ...user } = await User.create(req.body);
 
@@ -94,3 +93,4 @@ module.exports = {
   createJWT,
   checkToken
 };
+

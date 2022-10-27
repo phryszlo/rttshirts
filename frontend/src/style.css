@@ -46,14 +46,19 @@ code {
 }
 
 #root {
-  height: 100%;
+  min-height: 100vh;
 }
 
 .App {
   padding: 0;
   margin: 0;
+  min-height: 100vh;
+}
+.content-shell {
+  min-height: 100vh;
 }
 
+/* #region NAVBAR */
 .nav-bar {
   /* display: grid;
   justify-content: center;
@@ -105,24 +110,43 @@ h1.nav-title {
   border-radius: 15%;
 }
 
+.carousel-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 400px;
+}
+.carousel-wrapper * {
+  user-select: none;
+}
 .carousel {
+  /* z-index: -1; */
+  height: 100%;
   width: 60vw;
   margin: 2em auto;
+  /* border: solid greenyellow; */
+}
+.carousel-item {
+  /* z-index: -1; */
 }
 .carousel img {
-  height: 80vh;
-  width: 45vh;
+  height: 300px;
   border-radius: 50%;
 }
 .carousel h3, .carousel p {
   font-family: 'Blaka Ink', cursive;
-  font-size: 30px;
-  color: black;
-  /* text-shadow: .2px .4px var(--orange); */
-  filter: hue-rotate(340deg) saturate(500%);
+  font-size: 35px;
+  color: green;
+  text-shadow: .4px .4px var(--orange);
+  letter-spacing: .3pc;
+  filter: hue-rotate(140deg) saturate(500%);
 }
 .carousel p {
-  font-size: 14px;
+  font-size: 16px;
+}
+.add-to-cart-btn {
+  z-index: 100;
+  position: absolute;
 }
 
 .spacer {
@@ -143,62 +167,9 @@ h1.nav-title {
   text-shadow: .4px .4px var(--white);
 }
 
-.welcome {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-end;
-  font-size: 12px;
-  width: 100%;
-  padding-right: 1em;
-  font-family: 'Rajdhani';
-  filter: hue-rotate(122deg) saturate(500%);
-  /* border: solid fuchsia; */
-}
+/* #endregion */
 
-.align-ctr {
-  text-align: center;
-}
-
-.align-rt {
-  text-align: right;
-}
-
-.smaller {
-  font-size: smaller;
-}
-
-.flex-ctr-ctr {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.flex-j-end {
-  justify-content: flex-end;
-}
-
-.scroll-y {
-  overflow-y: scroll;
-}
-
-.section-heading {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: var(--tan-1);
-  color: var(--text-dark);
-  border: .1vmin solid var(--tan-3);
-  border-radius: 1vmin;
-  padding: .6vmin;
-  text-align: center;
-  font-size: 2vmin;
-}
-
+/* #region AUTHPAGE */
 #signInDiv {
   width: fit-content;
   margin: 0.2em auto;
@@ -324,21 +295,31 @@ button[type="submit"] {
   margin: 1vmin 0 0;
 }
 
-/* there endeth the copied style */
+/* #endregion */
 
+
+/* #region CARTPAGE */
+.cart-page {
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  height: 100%;
+}
+.cart-component {
+  border: solid black;
+  min-height: 100%;
+}
+.summary-component {
+  border: solid deeppink;
+}
+
+
+/* #endregion */
+
+
+
+
+/* what's this? */
 .or {
   padding: 0 0 1em 0;
 }
 
-.log-box {
-  width: 25vmin;
-  height: 18vmin;
-  background-color: #222;
-  color: var(--console);
-  font-family: 'Noto Sans Mono';
-  font-size: 9px;
-  text-align: left;
-  overflow-wrap: break-word;
-  padding: .5em;
-  margin: auto;
-}

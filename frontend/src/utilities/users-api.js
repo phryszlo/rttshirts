@@ -34,8 +34,10 @@ async function sendRequest(url, method = 'GET', payload = null) {
   //☣️☣️ this is a terrible clg. it will send the clear pwd to the browser console.
   // console.log(`api sendRequest:  token: ${token} url: ${url} options: ${JSON.stringify(options)}`);
 
-  console.log(`before fetch users-api: ${url}`);
+  // console.log(`before fetch users-api: ${url}`);
   const res = await fetch(url, options);
+  console.log(`after fetch users-api: ${url}`);
+
   // res.ok will be false if the status code set to 4xx in the controller action
   if (res.ok) return res.json()
   else if (res.status === 401) {
